@@ -1,0 +1,13 @@
+{
+  "appName": "quotes-flask",
+  "userGivenName": "quotes-flask",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": ".",
+  "srcRepoURL": "https://github.com/sofusalbertsen/quotes-flask.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null,
+  "exclude": "",
+  "include": ""
+}
