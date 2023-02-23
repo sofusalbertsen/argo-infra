@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bootstrap
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: development
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: bootstrap/bootstrapped-apps/
+    repoURL: 'https://github.com/sofusalbertsen/argo-infra.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    
