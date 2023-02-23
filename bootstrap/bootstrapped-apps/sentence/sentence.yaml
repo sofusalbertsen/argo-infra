@@ -13,7 +13,7 @@ spec:
     repoURL: 'https://github.com/sofusalbertsen/argo-infra.git'
     targetRevision: 0.1.0
     helm:
-      releaseName: Webreq3
+      releaseName: sentence
   sources: []
   project: default
   syncPolicy:

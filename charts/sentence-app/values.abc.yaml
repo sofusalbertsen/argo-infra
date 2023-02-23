@@ -1,5 +1,5 @@
 sentences:
-  replicas: 2
+  replicas: 1
   image:
     repository: releasepraqma/sentence
     tag: latest
@@ -7,6 +7,6 @@ sentences:
     type: NodePort
   resources:
     requests:
-      cpu: 1.25
+      cpu: 0.25
     limits:
-      cpu: 1.25
+      cpu: 0.25
