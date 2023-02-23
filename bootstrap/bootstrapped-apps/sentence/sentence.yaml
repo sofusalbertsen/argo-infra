@@ -6,16 +6,19 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    name: ''
-    namespace: 'default'
-    server: ''
+    namespace: default
+    server: https://kubernetes.default.svc
   source:
-    path: charts/sentence-app
+    chart: charts/sentence-app
     repoURL: 'https://github.com/sofusalbertsen/argo-infra.git'
-    targetRevision: HEAD
+    targetRevision: 0.1.0
+    helm:
+      releaseName: Webreq3
   sources: []
   project: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
