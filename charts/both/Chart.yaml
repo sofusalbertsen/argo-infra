@@ -1,5 +1,5 @@
 apiVersion: v2
-name: sentence-app
+name: both
 description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
@@ -22,3 +22,25 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
+dependencies:
+- name: mysql
+  version: 9.5.0
+  repository: file://../mysql
+  condition: mysql.enabled
+  tags:
+  - mysql
+  - database
+  - sql
+  - cluster
+  - high availability
+- name: sentence-app
+  version: 0.1.0
+  repository: file://../sentence-app
+  condition: sentence-app.enabled
+  tags:
+  - sentence-app
+  - sentence
+  - word
+  - words
+  - word-service
+  - word-service-app

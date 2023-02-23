@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: both
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: both
+    server: https://kubernetes.default.svc
+  source:
+    path: charts/both
+    repoURL: 'https://github.com/sofusalbertsen/argo-infra'
+    targetRevision: main
+    helm:
+      releaseName: both
+  sources: []
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
