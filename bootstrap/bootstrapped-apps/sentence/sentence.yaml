@@ -13,7 +13,7 @@ spec:
   source:
     path: charts/sentence-app
     repoURL: 'https://github.com/sofusalbertsen/argo-infra'
-    targetRevision: master
+    targetRevision: main
     helm:
       releaseName: sentence
   sources: []
