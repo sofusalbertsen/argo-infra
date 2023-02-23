@@ -6,17 +6,17 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  project: default
   destination:
     namespace: default
     server: https://kubernetes.default.svc
   source:
     chart: charts/sentence-app
-    repoURL: 'https://github.com/sofusalbertsen/argo-infra.git'
-    targetRevision: 0.1.0
+    repoURL: 'https://github.com/sofusalbertsen/argo-infra'
+    targetRevision: master
     helm:
       releaseName: sentence
   sources: []
-  project: default
   syncPolicy:
     automated:
       prune: true
