@@ -11,7 +11,7 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   source:
-    chart: charts/sentence-app
+    path: charts/sentence-app
     repoURL: 'https://github.com/sofusalbertsen/argo-infra'
     targetRevision: master
     helm:
