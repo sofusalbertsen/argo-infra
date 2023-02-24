@@ -10,13 +10,18 @@ spec:
   destination:
     namespace: default
     server: https://kubernetes.default.svc
-  source:
+  sources:
+  - repoURL: 'https://github.com/sofusalbertsen/argo-infra'
     path: charts/sentence-app
-    repoURL: 'https://github.com/sofusalbertsen/argo-infra'
     targetRevision: main
     helm:
       releaseName: sentence
-  sources: []
+      valueFiles:
+      - $values/bootstrapped-apps/sentence/values.abc.yaml
+  - repoURL: 'https://github.com/sofusalbertsen/argo-infra'
+    targetRevision: main
+    ref: values
+    
   syncPolicy:
     automated:
       prune: true
