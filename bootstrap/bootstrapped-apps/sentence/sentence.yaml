@@ -17,10 +17,10 @@ spec:
     helm:
       releaseName: sentence
       valueFiles:
-      - $values/bootstrapped-apps/sentence/values.abc.yaml
+      - $valNS/bootstrapped-apps/sentence/values.abc.yaml
   - repoURL: 'https://github.com/sofusalbertsen/argo-infra'
     targetRevision: main
-    ref: values
+    ref: valNS
     
   syncPolicy:
     automated:
