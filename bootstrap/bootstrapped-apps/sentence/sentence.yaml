@@ -17,7 +17,7 @@ spec:
     helm:
       releaseName: sentence
       valueFiles:
-      - $valNS/bootstrapped-apps/sentence/values.abc.yaml
+      - $valNS/bootstrap/bootstrapped-apps/sentence/sentence.yaml
   - repoURL: 'https://github.com/sofusalbertsen/argo-infra'
     targetRevision: main
     ref: valNS
