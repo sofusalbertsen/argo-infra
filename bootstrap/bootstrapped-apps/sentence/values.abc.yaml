@@ -1,5 +1,5 @@
 sentences:
-  replicas: 2
+  replicas: 3
   image:
     repository: releasepraqma/sentence
     tag: latest
